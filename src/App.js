@@ -4,6 +4,7 @@ import {
     removeCustomerAction,
 } from "./store/customersReducer";
 import { addCashAction, getCashAction } from "./store/cashReducer";
+import { fetchCustomers } from "./store/asuncCustomer/customers";
 
 function App() {
     // useDispatch нужен для dispatch - изменяет состояние
@@ -44,6 +45,9 @@ function App() {
                 </button>
                 <button onClick={() => addCustomer(prompt())}>
                     Добавить клиента
+                </button>
+                <button onClick={() => dispatch(fetchCustomers())}>
+                    Показать всех клиентов
                 </button>
             </div>
             {customers.length > 0 ? (
